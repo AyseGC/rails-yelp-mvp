@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # db/seeds.rb
-puts "Cleaning database..."
+puts 'Cleaning database...'
 Restaurant.destroy_all
 
-puts "Creating restaurants..."
-catagory = ["chinese", "italian", "japanese", "french", "belgian"]
+puts 'Creating restaurants...'
+catagory = %w[chinese italian japanese french belgian]
 50.times do
   restaurant = Restaurant.create(
     name: Faker::Restaurant.name,
@@ -14,4 +16,4 @@ catagory = ["chinese", "italian", "japanese", "french", "belgian"]
   puts "Created #{restaurant.name}"
 end
 
-puts "Finished!"
+puts 'Finished!'
